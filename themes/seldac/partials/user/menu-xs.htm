@@ -1,0 +1,19 @@
+<!-- user-menu-xs -->
+<? $fix = $this->user ? 'out' : 'in' ?>
+<a class="user-menu-xs visible-xs pull-right btn btn-danger" data-tooltip data-placement="left"
+	title="<?= _('Sign '. $fix) ?>" href="<?= $this->app->linkTo('sign', $fix) ?>">
+	<i class="mr-10px fa fa-sign-<?= $fix ?>"></i>
+</a>
+<? if ( $this->ctrl->isAdmin() ): ?>
+	<a class="user-menu-xs visible-xs pull-right btn btn-info" data-tooltip target="_view_site" data-placement='left'
+		title="<?= _('View site') ?>" href="<?= $this->app->linkTo('front-end', 'index') ?>">
+		<i class="fa fa-sitemap"></i>
+ </a>
+<? endif ?>
+<? if ( $this->vars()->check('user') && !$this->ctrl->isAdmin() ): ?>
+	<a class="user-menu-xs visible-xs pull-right btn btn-info" data-tooltip data-placement='left'
+		title="<?= _('Admin') ?>" target="_admin" href="<?= $this->app->linkTo('admin', 'index') ?>">
+		<i class="glyphicon glyphicon-wrench fa-fw mr-10px"></i>
+	</a>
+<? endif ?>
+<!-- /user-menu-xs -->

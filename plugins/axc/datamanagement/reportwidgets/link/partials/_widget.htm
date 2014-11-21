@@ -1,0 +1,29 @@
+<? if ($this->alias !== 'link_report_widget'): ?>
+	<div class="report-widget">
+		<h3><?= Lang::get('axc.datamanagement::lang.link.widget.title') ?></h3>
+<? endif ?>
+	<div class="scoreboard">
+		<div data-control="toolbar">
+			<div class="scoreboard-item title-value">
+				<h4><?= Lang::get('axc.datamanagement::lang.link.widget.link') ?></h4>
+				<p class="<?= $link_trend ?>"><?= $link_current_month ?></p>
+				<p class="description"><?= sprintf(Lang::get('axc.datamanagement::lang.link.widget.previous_month'), $link_previous_month) ?></p>
+			</div>
+
+			<div class="scoreboard-item control-chart" data-control="chart-pie">
+					<ul>
+							<li data-color="#95b753"><?= Lang::get('axc.datamanagement::lang.link.widget.total') ?> <span><?= $link_total ?></span></li>
+							<li data-color="#e5a91a"><?= Lang::get('axc.datamanagement::lang.link.widget.published') ?> <span><?= $link_published ?></span></li>
+					</ul>
+			</div>
+
+			<div class="scoreboard-item title-value" data-control="goal-meter" data-value="<?= $link_goal_meter ?>">
+				<h4><?= Lang::get('axc.datamanagement::lang.link.widget.goal_meter') ?></h4>
+				<p><?= $link_goal_meter ?>%</p>
+				<p class="description"><?= sprintf(Lang::get('axc.datamanagement::lang.link.widget.link_published'), $link_published, $link_total) ?></p>
+		</div>
+		</div>
+	</div>
+<? if ($this->alias !== 'link_report_widget'): ?>
+	</div>
+<? endif ?>

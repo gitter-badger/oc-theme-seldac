@@ -1,0 +1,28 @@
+[menu]
+menu_id = "default"
+selected_item_class='active'
+before_menu='<ul id="%3$s" class="nav navbar-nav mt-0px mb-0px">'
+before_url_item_label='<a href="%1$s" title="%6$s" class="page" target="%7$s">'
+==
+<div class="navbar navbar-default navbar-fixed-top">
+	<div class="container">
+		<div class="navbar-header">
+			<button class="navbar-toggle" type="button" data-target=".navbar-collapse" data-toggle="collapse">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+
+			<a class="navbar-brand hidden-xs mr-50px p-0px pt-5px"
+				href="{{ 'index'|theme }}"><img
+				src="{{ 'assets/images/header/logo.png'|theme }}"
+				alt="{{ 'full-name'|theme }}" /></a><!-- /.navbar-brand.hidden-xs -->
+			<a class="navbar-brand visible-xs"
+				href="{{ index|theme }}"><strong>{{ 'name'|theme }}</strong></a><!-- /.navbar-brand.visible-xs -->
+		</div><!-- /.navbar-header -->
+
+		<div class="navbar-collapse collapse">
+			{% component 'menu' selected_item=this.page.title|lower %}
+		</div><!-- /.navbar-collapse -->
+	</div><!-- /.container -->
+</div><!-- /.navbar -->

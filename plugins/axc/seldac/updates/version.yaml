@@ -1,0 +1,6 @@
+1.0.5: First version of Seldac
+1.0.6:
+  - Add Link Model
+  - create_link_table.php
+  - seed_link_table.php
+1.0.7: Remove Link Model (create a seperated and more general plugin)

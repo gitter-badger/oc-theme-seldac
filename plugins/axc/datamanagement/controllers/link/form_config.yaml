@@ -1,0 +1,22 @@
+###
+ # @author Alex Carrega <contact@alexcarrega.com>
+ # @license http://www.apache.org/licenses/LICENSE-2.0 Apache License, Version 2.0
+ ##
+
+name: Link
+form: @/plugins/axc/datamanagement/models/link/fields.yaml
+modelClass: AxC\DataManagement\Models\Link
+defaultRedirect: axc/datamanagement/link
+
+create:
+  title: axc.datamanagement::lang.link.form.create.title
+  redirect: axc/datamanagement/link/update/:id
+  redirectClose: axc/datamanagement/link
+  flashSave: axc.datamanagement::lang.link.form.create.flash.save
+
+update:
+  title: axc.datamanagement::lang.link.form.update.title
+  redirect: axc/datamanagement/link/update/:id
+  redirectClose: axc/datamanagement/link
+  flashSave: axc.datamanagement::lang.link.form.update.flash.save
+  flashDelete: axc.datamanagement::lang.link.form.update.flash.delete

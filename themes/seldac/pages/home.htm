@@ -1,0 +1,152 @@
+title = "Home"
+url = "/"
+layout = "default"
+description = "Home page"
+hidden = "0"
+robot_index = "index"
+robot_follow = "follow"
+child_of = "mey_no_parent"
+hide_crumb = "0"
+remove_crumb_trail = "0"
+crumb_disabled = "0"
+==
+<div class="hidden-xs carousel slide" id="carousel-home" data-ride="carousel">
+	<ol class="carousel-indicators">
+		<li class="active" data-target="#carousel-home" slide-to="0"></li>
+		<li data-target="#carousel-home", slide-to="1"></li>
+		<li data-target="#carousel-home", slide-to="2"></li>
+	</ol>
+	<div class="carousel-inner">
+		<div class="item active">
+			<img src="{{ 'assets/img/home/slideshow/01.jpg'|theme }}"
+				alt="<?= $this->app->setting()->propText('full-name') ?>" />
+			<div class="carousel-caption">
+				<h1><?= $this->app->setting()->propText('full-name') ?></h1>
+				<h3>{{ 'è la risposta'|_ }}</h3>
+				<p class="strong well">
+					{{ 'alle esigenze amministrative di tutte le Aziende, piccole e medie imprese, professionisti ed associazioni.'|_ }}
+				</p>
+			</div>
+		</div>
+		<div class="item">
+			<img src="{{ 'assets/img/home/slideshow/02.jpg'|theme }}"
+				alt="<?= $this->app->setting()->propText('full-name') ?>" />
+			<div class="carousel-caption">
+				<h1><?= $this->app->setting()->propText('full-name') ?></h1>
+				<h3>{{ 'offre'|_ }}</h3>
+				<p class="strong text-justify well">
+					<i class="fa fa-info fa-3x pull-left fa-border pointer" data-container="body"
+						data-popover data-placement="top"
+						data-content="{{ 'Il nostro Cliente può liberarsi dalle incombenze relative da personale di comprovata esperienza, mediante l\'utilizzo di uno dei più avanzati software gestionali quale ZUCCHETTI.'|_ }}"></i>
+					{{ 'consulenze di alto livello alle imprese, accompagnando passo dopo passo i propri assistiti negli ormai complessi meandri fiscali. Il servizio di elaborazione elettronica dei dati contabili permette di soddisfare tutti gli adempimenti previsti dalle norme vigenti.'|_ }}
+				</p>
+			</div>
+		</div>
+		<div class="item">
+			<img src="{{ 'assets/img/home/slideshow/03.jpg'|theme }}"
+				alt="<?= $this->app->setting()->propText('full-name') ?>" />
+			<div class="carousel-caption">
+				<h1><?= $this->app->setting()->propText('full-name') ?></h1>
+				<h3>{{ 'svolge'|_ }}</h3>
+				<p class="strong well">
+					{{ 'l\'attività di elaborazione dati contabili e fiscali con particolare meticolosità e puntualità con i dati ed i documenti forniti dal Cliente.'|_ }}
+				</p>
+			</div>
+		</div>
+	</div><!-- /.carousel-inner -->
+	<a class="left carousel-control" href="#carousel-home" data-slide="prev">
+		<span class="glyphicon glyphicon-chevron-left"></span></a>
+	<a class="right carousel-control" href="#carousel-home" data-slide="next">
+		<span class="glyphicon glyphicon-chevron-right"></span></a>
+</div><!-- /.carousel-slide -->
+<div class="container">
+	<div class="page-header text-center"><h1>{{ 'Servizi:dots'|_({ dots: '...' }) }}
+		<small>{{ 'Contabilità'|_ }}</small></h1></div>
+	<div class="row">
+		<div class="col-md-4 col-xs-12">
+			<div class="thumbnail">
+				<img class="img-circle" alt="{{ 'Ordinaria Imprese'|_ }}"
+					src="{{ 'assets/img/home/ordinary-business.gif'|theme }}" />
+				<div class="caption h-300px">
+					<h3 class="text-success text-center"><strong>{{ 'Ordinaria Imprese'|_ }}</strong></h3>
+					<ul>
+						<li>{{ 'Inserimento dei dati contabili'|_ }}</li>
+						<li>{{ 'Liquidazione :vat'|_({ vat: vat_abbr }) }}</li>
+						<li>{{ 'Gestione ritenute'|_ }}
+						<li>{{ 'Gestione cespiti ammortizzabili'|_ }}</li>
+						<li>{{ 'Scadenzari clienti e fornitori'|_ }}</li>
+						<li>{{ 'Stampa libro giornale, registri :vat, libro inventari, schede contabili'|_({ var: vat_abbr }) }}</li>
+						<li>{{ 'Stampa bilanci di verifica intermedi e di chiusura'|_ }}</li>
+					</ul>
+				</div>
+			</div>
+		</div><!-- /ordinary-business -->
+		<div class="col-md-4 col-xs-12">
+			<div class="thumbnail">
+				<img class="img-circle" alt="{{ 'Semplificata Imprese'|_ }}"
+					src="{{ 'assets/img/home/simplified-business.gif'|theme }}" />
+				<div class="caption h-300px">
+					<h3 class="text-primary text-center"><strong>{{ 'Semplificata Imprese'|_ }}</strong></h3>
+					<ul>
+						<li>{{ 'Inserimento dei dati contabili'|_ }}</li>
+						<li>{{ 'Liquidazione :vat'|_({ vat: vat_abbr }) }}</li>
+						<li>{{ 'Gestione ritenute'|_ }}</li>
+						<li>{{ 'Gestione cespiti ammortizzabili'|_ }}</li>
+						<li>{{ 'Stampa registri :vat'|_({ vat: vat_abbr }) }}</li>
+						<li>{{ 'Stampa bilanci di verifica intermedi e di chiusura'|_ }}</li>
+					</ul>
+				</div>
+			</div>
+		</div><!--/simplified-business -->
+		<div class="col-md-4 col-xs-12">
+			<div class="thumbnail">
+				<img class="img-circle" alt="{{ 'Professionisti'|_ }}"
+					src="{{ 'assets/img/home/professionals.gif'|theme }}" />
+				<div class="caption h-300px">
+					<h3 class="text-info text-center"><strong>{{ 'Professionisti'|_ }}</strong></h3>
+					<ul>
+						<li>{{ 'Inserimento dei dati contabili'|_ }}</li>
+						<li>{{ 'Liquidazione :vat'|_({ vat: vat_abbr }) }}</li>
+						<li>{{ 'Gestione ritenute'|_ }}</li>
+						<li>{{ 'Gestione cespiti ammortizzabili'|_ }}</li>
+						<li>{{ 'Stampa registri :vat'|_({ vat: vat_abbr }) }}</li>
+						<li>{{ 'Stampa bilanci di verifica intermedi e di chiusura'|_ }}</li>
+					</ul>
+				</div>
+			</div>
+		</div><!-- /professionals -->
+	</div><!-- /.row -->
+	<div class="row mb-20px">
+		<div class="page-header text-center"><h1>{{ 'Servizi:dots'|_({ dots: '...' }) }}
+			<small>{{ 'Dichiarazioni & altro'|_ }}</small></h1></div>
+		<div class="col-md-12 col-xs-12">
+			<div class="media">
+				<img class="media-object img-thumbnail pull-left hidden-xs" alt="{{ 'Dichiarazioni fiscali'|_ }}"
+					src="{{ 'assets/img/home/tax.gif'|theme }}" />
+				<div class="media-body">
+					<h4 class="media-heading text-danger"><strong>{{ 'Dichiarazioni fiscali'|_ }}</strong></h4>
+					<p>
+						{{ 'Predisposizione per elaborazione del modello UNICO comprensivo di dichiarazione redditi, modello :vat e :irap ed invio telematico c/o l\'Agenzia delle Entrate dello stesso.'|_({ vat: vat_abbr, irap: irap_abbr }) }}
+					</p>
+					<p>
+						{{ 'Predisposizione per l\'elaborazione degli eventuali studi di settore, della comunicazione annuale dati :vat, :vat e dei modelli di pagamenti F24 con addebito telematico, la redazione e l\'invio delle Certificazioni dei compensi assoggettati a ritenuta d\'acconto.'|_({ vat: vat_abbr }) }}
+					</p>
+				</div>
+			</div><!-- tax -->
+			<div class="media">
+				<img class="media-object img-thumbnail pull-left hidden-xs"
+					alt="{{ 'Altre attività'|_ }}" src="{{ 'assets/img/home/other-activities.gif'|theme }}" />
+				<div class="media-body">
+					<h4 class="media-heading text-success"><strong>{{ 'Altre attività'|_ }}</strong></h4>
+					<ul>
+						<li>{{ 'Contratti di locazione'|_ }}</li>
+						<li>{{ 'Pratiche telematiche Camera di Commercio'|_ }}</li>
+						<li>{{ 'Conteggi :vat'|_({ vat: vat_abbr }) }}</li>
+						<li>{{ 'Avvio nuove imprese'|_ }}</li>
+						<li>{{ 'Sportello :caf'|_({ caf: caf_abbr }) }}</li>
+					</ul>
+				</div>
+			</div><!-- /other-activities -->
+		</div>
+	</div><!-- /.row -->
+</div><!-- /.container -->

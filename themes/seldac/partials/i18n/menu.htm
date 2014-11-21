@@ -1,0 +1,16 @@
+<!-- i18n-select -->
+<ul class="nav navbar-nav navbar-right hidden-xs i18n">
+	<li class="dropdown">
+		<a class="dropdown-toggle" href="#" data-toggle="dropdown"><i class="fa fa-flag"></i></a>
+		<ul class="dropdown-menu pt-0px pb-0px" role="menu">
+			<? foreach ($this->app->i18n() as $i18n): ?>
+				<li class="<?= $this->app->i18n()->is($i18n->name) ? 'active' : STR_BLANK ?>">
+					<a class="pt-10px pb-10px pl-20px pr-20px" href="<?= $this->ctrl->i18nLink($i18n->name) ?>">
+						<i class="flag-icon flag-icon-<?= $i18n->locale ?> mr-5px" ></i><?= $i18n->title ?></a>
+				</li>
+				<!-- /<?= $i18n ?> -->
+			<? endforeach ?>
+		</ul><!-- /dropdown-menu -->
+	</li><!-- /dropdown-toggle -->
+</ul><!--/ dropdown -->
+<!-- /i18n-select -->

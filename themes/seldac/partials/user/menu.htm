@@ -1,0 +1,54 @@
+<ul class="nav navbar-nav navbar-right hidden-xs user-menu">
+	<li class="dropdown">
+		<a class="dropdown-toggle" href="#" data-toggle="dropdown"><i class="fa fa-user"></i></a>
+		<ul class="dropdown-menu">
+			<? if ( $this->vars()->check('user') ): ?>
+				<li>
+					<div class="navbar-content w-400px p-15px">
+						<div class="row">
+							<div class="col-md-5">
+								<img src="<?= $this->app->linkTo('admin-account', 'avatar') ?>" alt="Avatar"
+									class="img-circle" height="100px" width="100px" />
+							</div><!-- /.col-md-5 -->
+							<div class="col-md-7">
+								<span><?= $this->user->name ?></span>
+								<p class="text-muted small"><?= $this->user->username ?></p>
+								<div class="divider"></div>
+								<div><span class="label label-primary"><?= $this->user->group->name ?></span></div>
+								<div class="text-right">
+									<div class="btn-group btn-group-sm">
+										<a href="<?= $this->user->account_url ?>" data-tooltip data-placement="left"
+											target="<?= $this->user->account_target ?>" title="<?= _('Account') ?>"
+											class="btn btn-primary active"><i class="fa fa-home"></i></a>
+									</div><!-- /.btn-group -->
+								</div><!-- /.text-right -->
+							</div><!-- /.col-md-7 -->
+						</div><!-- /.row -->
+					</div><!-- /.navbar-content -->
+					<div class="navbar-footer">
+						<div class="navbar-footer-content p-15px bg-lighten-success-25pc">
+							<div class="row">
+								<div class="col-md-6">
+									<? if ( $this->ctrl->isAdmin() ): ?>
+										<a target="_view_site" href="<?= $this->app->linkTo('front-end', 'index') ?>"
+											class="btn btn-default btn-sm"><i class="fa fa-sitemap mr-10px"></i><?= _('View site') ?></a>
+									<? else: ?>
+										<a target="_admin" href="<?= $this->app->linkTo('admin', 'index') ?>"
+											class="btn btn-default btn-sm"><i class="glyphicon glyphicon-wrench mr-10px"></i>
+											<?= _('Admin') ?></a>
+									<? endif ?>
+								</div><!-- /.col-md-6 -->
+								<div class="col-md-6 text-right">
+									<a href="<?= $this->app->linkTo('sign', 'out') ?>" class="btn btn-default btn-sm pull-right">
+										<i class="fa fa-sign-out mr-10px"></i><?= _('Sign out') ?></a>
+								</div><!-- /.col-md-6 -->
+							</div><!-- /.row -->
+						</div><!-- /.navbar-footer-content -->
+					</div><!-- navbar-footer -->
+				</li>
+			<? else: ?>
+				<li><? $this->module()->core('sign/index') ?></li>
+			<? endif ?>
+		</ul><!-- /.dropdown-menu -->
+	</li><!-- /.dropdown -->
+</ul><!-- /.nav.navbar-nar -->

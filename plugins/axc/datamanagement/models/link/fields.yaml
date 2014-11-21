@@ -1,0 +1,49 @@
+###
+ # @author Alex Carrega <contact@alexcarrega.com>
+ # @license http://www.apache.org/licenses/LICENSE-2.0 Apache License, Version 2.0
+ ##
+
+fields:
+  title:
+    label: axc.datamanagement::lang.link.form.fields.title.label
+    required: true
+    placeholder: axc.datamanagement::lang.link.form.fields.title.placeholder
+    comment: axc.datamanagement::lang.link.form.fields.title.comment
+
+  url:
+    label: axc.datamanagement::lang.link.form.fields.url.label
+    required: true
+    placeholder: axc.datamanagement::lang.link.form.fields.url.placeholder
+    comment: axc.datamanagement::lang.link.form.fields.url.comment
+
+  image:
+    label: axc.datamanagement::lang.link.form.fields.image.label
+    commentAbove: axc.datamanagement::lang.link.form.fields.image.comment|10
+    type: fileupload
+    mode: image
+    size: giant
+    span: right
+    imageHeight: 120
+    imageWidth: 120
+
+  position:
+    label: axc.datamanagement::lang.link.form.fields.position.label
+    type: number
+    required: true
+    span: left
+    placeholder: axc.datamanagement::lang.link.form.fields.position.placeholder
+    comment: axc.datamanagement::lang.link.form.fields.position.comment
+
+  published:
+    label: axc.datamanagement::lang.link.form.fields.published.label
+    type: checkbox
+    span: left
+    default: false
+    comment: axc.datamanagement::lang.link.form.fields.published.comment
+
+  description:
+    label: axc.datamanagement::lang.link.form.fields.description.label
+    type: Backend\FormWidgets\RichEditor
+    size: huge
+    commentAbove: axc.datamanagement::lang.link.form.fields.description.comment
+    required: true

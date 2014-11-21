@@ -1,0 +1,154 @@
+title = "Insurance"
+url = "/insurance"
+layout = "default"
+description = "Insurance page"
+hidden = "0"
+robot_index = "index"
+robot_follow = "follow"
+child_of = "mey_no_parent"
+hide_crumb = "0"
+remove_crumb_trail = "0"
+crumb_disabled = "0"
+==
+<div class="container mb-30px">
+	<div class="page-header text-center">
+			<h1><img alt="{{ 'Mirco Ceseri - Consulenze Assicurative e Finanziarie in plurimandato'|_ }}"
+				title="{{ 'Mirco Ceseri - Consulenze Assicurative e Finanziarie in plurimandato'|_ }}"
+				src="{{ 'assets/img/insurance/logo.gif'|theme }}" /></h1>
+			{% partial "flash" %}
+	</div>
+	<div class="row">
+		<div class="col-md-12 col-xs-12">
+			<div class="jumbotron text-justify">
+				<p>
+					{{ 'La nostra {:success_open}filosofia:success_close} è risolvere i bisogni assicurativi di voi tutti, persone e imprese, che ogni giorno vi trovate ad affrontare problemi e necessità nel lavoro così come nella vita di tutti i giorni.'|_({ success_open: '<strong class="text-success">', success_close: '</strong>'}) }}
+				</p>
+				<p>
+					{{ 'Grazie alla nostra %sesperienza%s e ai nostri %spartners%s internazionali, siamo in grado di fornire la migliore consulenza in campo %sassicurativo%s, %sfinanziario%s e %sprevidenziale%s.'),
+					'<strong class="text-success">', '</strong>', '<strong class="text-success">', '</strong>', '<strong class="text-success">', '</strong>', '<strong class="text-success">', '</strong>', '<strong class="text-success">', '</strong>') ?></p>
+				<p><?= sprintf( _('Potendo fruire della collaborazione con le migliori compagnie assicurative presenti sul mercato avrete la %slibertà di scegliere%s prodotti innovativi a %scosti realmente contenuti%s.'),
+					'<strong class="text-success">', '</strong>', '<strong class="text-success">', '</strong>') ?></p>
+			</div>
+			<div class="row">
+				<? foreach ($this->insurances as $insurance): ?>
+					<div class="col-xs-3 col-md-2 text-center">
+						<img class="img-thumbnail mt-10px mb-10px h-100px"
+							src="<?= $this->app->linkTo('front-end', 'insurance-image', $insurance->id) ?>"
+							alt="<?= $insurance->title ?>" title="<?= $insurance->title ?>" data-tooltip />
+					</div><!-- /.col-xs-3.col-md-2 -->
+				<? endforeach ?>
+			</div><!-- /.row -->
+		</div><!-- /.col-md-12 -->
+	</div><!-- /.row -->
+	<div class="row mt-50px">
+		<div class="col-md-12 col-xs-12">
+			<ul class="nav nav-tabs">
+				<li class="active"><a href="#tab-1" data-toggle="tab">{{ 'Info'|_ }}</a></li>
+				<li><a href="#tab-2" data-toggle="tab">{{ 'Persone'|_ }}</a></li>
+				<li><a href="#tab-3" data-toggle="tab">{{ 'Aziende'|_ }}</a></li>
+				<li><a href="#tab-4" data-toggle="tab">{{ 'Professionisti'|_ }}</a></li>
+				<li><a href="#tab-5" data-toggle="tab">{{ 'Commercio'|_ }}</a></li>
+			</ul>
+			<div class="tab-content">
+				<div class="tab-pane active in text-danger p-20px" id="tab-1">
+					<div class="row">
+							<div class="col-md-6 col-xs-12">
+								<address>
+									<abbr class="mr-10px" title="{{ 'Address'|_ }}"><i class="fa fa-building fa-fw"></i></abbr>
+									<?= $this->mc_address->propText('street') ?> n. <?= $this->mc_address->propText('number') ?>
+									int. <?= $this->mc_address->propText('int') ?><br/>
+									<abbr class="mr-10px" title="{{ 'City'|_ }}"><i class="fa fa-location-arrow fa-fw"></i></abbr>
+									<?= $this->mc_address->propText('zip') ?> <?= $this->mc_address->propText('city') ?>
+									(<?= $this->mc_address->propText('prov') ?>) - <?= $this->mc_address->propText('country') ?>
+								</address>
+								<address>
+									<abbr class="mr-10px" title="{{ 'NIN'|_ }}"><i class="fa fa-qrcode fa-fw"></i></abbr>
+									<?= $this->mirco_ceseri->propText('nin') ?><br/>
+									<abbr class="mr-10px" title="{{ 'VAT'|_ }}"><i class="fa fa-barcode fa-fw"></i></abbr>
+									<?= $this->mirco_ceseri->propText('vat') ?><br/>
+									<?= sprintf( _('%s registration: Section %s - Number %s of %s'), $this->rui_abbr, $this->rui->propText('section'), $this->rui->propText('number'), $this->rui->propText('date') ) ?>
+								</address>
+								<address><abbr class="mr-10px" title="{{ 'Fax'|_ }}"><i class="fa fa-print fa-fw"></i></abbr>
+									<?= $this->mirco_ceseri->propText('fax') ?></address>
+							</div>
+							<div class="col-md-6 col-xs-12">
+								<address>
+									<abbr title="{{ 'Phone'|_ }}"><i class="fa fa-phone fa-3x fa-fw pull-left"></i></abbr>
+									<?= implode(html_tag('br'), $this->mirco_ceseri->obj('phone')->properties_list) ?>
+								</address>
+								<address>
+									<abbr title="{{ 'Mobile'|_ }}"><i class="fa fa-mobile fa-3x fa-fw pull-left"></i></abbr>
+									<?= implode(html_tag('br'), $this->mirco_ceseri->obj('mobile')->properties_list) ?>
+								</address>
+								<address>
+									<abbr title="{{ 'Email'|_ }}"><i class="fa fa-envelope fa-fw fa-4x pull-left"></i></abbr>
+									<? foreach ($this->mirco_ceseri->obj('email')->properties_list as $email): ?>
+										<a data-tooltip href="mailto:<?= $email ?>"
+											title="{{ 'Write an email to %s'|_({ %s: '$email) ?>"><?= $this->img()->text($email, 300, 50' }) }}</a><br/>
+									<? endforeach ?>
+								</address>
+							</div>
+						</div><!-- /.row -->
+				</div><!-- /#tab-1 -->
+				<div class="tab-pane in text-danger p-20px" id="tab-2">
+					<ul>
+						<li>{{ 'R.C. Auto e Moto'|_ }}</li>
+						<li>{{ 'Globali Abitazione'|_ }}</li>
+						<li>{{ 'Capofamiglia'|_ }}</li>
+						<li>{{ 'Infortuni'|_ }}</li>
+						<li>{{ 'Salute'|_ }}</li>
+						<li>{{ 'Impianti fotovoltaici'|_ }}</li>
+						<li>{{ 'Piani di accumulo'|_ }}</li>
+						<li>{{ 'Polizze vita'|_ }}</li>
+						<li>{{ 'Fondi integrativi (F.I.P)'|_ }}</li>
+						<li>{{ 'Investimenti'|_ }}</li>
+						<li>{{ 'Credito al consumo'|_ }}</li>
+					</ul>
+				</div><!-- /#tab-2 -->
+				<div class="tab-pane p-20px" id="tab-3">
+					<ul>
+						<li>{{ 'R.C. Auto e flotte'|_ }}</li>
+						<li>{{ 'Globali aziende'|_ }}</li>
+						<li>{{ 'Globali agricoltori'|_ }}</li>
+						<li>{{ 'C.A.R'|_ }}</li>
+						<li>{{ 'E.A.R'|_ }}</li>
+						<li>{{ 'Postuma.'|_ }}</li>
+						<li>{{ 'Grandine'|_ }}</li>
+						<li>{{ 'Terremoto'|_ }}</li>
+						<li>{{ 'Infortuni'|_ }}</li>
+						<li>{{ 'Salute'|_ }}</li>
+						<li>{{ 'R.C. Aziende'|_ }}</li>
+						<li>{{ 'Fideiussioni'|_ }}</li>
+						<li>{{ 'Fondi Integrativi (F.I.P.)'|_ }}</li>
+						<li>{{ 'T.F.R.'|_ }}</li>
+						<li>{{ 'Previdenza'|_ }}</li>
+						<li>{{ 'Fringe benefit'|_ }}</li>
+						<li>{{ 'Impianti fotovoltaici'|_ }}</li>
+						<li>{{ 'Trasporti'|_ }}</li>
+					</ul>
+				</div><!-- /#tab-3 -->
+				<div class="tab-pane p-20px" id="tab-4">
+					<ul>
+						<li>{{ 'Globali studio e ufficio'|_ }}</li>
+						<li>{{ 'Rischi elettronici'|_ }}</li>
+						<li>{{ 'R.C. Architetti'|_ }}</li>
+						<li>{{ 'R.C. Avvocati'|_ }}</li>
+						<li>{{ 'R.C. Ingegneri'|_ }}</li>
+						<li>{{ 'R.C. Medici'|_ }}</li>
+						<li>{{ 'R.C. Odontoiatri'|_ }}</li>
+						<li>{{ 'R.C. Geometri'|_ }}</li>
+						<li>{{ 'R.C. Commercialisti'|_ }}</li>
+						<li>{{ 'R.C. Notai'|_ }}</li>
+						<li>{{ 'R.C. Consulenti del lavoro'|_ }}</li>
+					</ul>
+				</div><!-- /#tab-4 -->
+				<div class="tab-pane p-20px" id="tab-5">
+					<ul>
+						<li>{{ 'Globali negozio'|_ }}</li>
+						<li>{{ 'Globali albergo'|_ }}</li>
+					</ul>
+				</div><!-- /#tab-5 -->
+			</div><!-- /.tab-content -->
+		</div>
+	</div><!-- /.row -->
+</div><!-- /.container -->

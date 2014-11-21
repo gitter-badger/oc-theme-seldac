@@ -1,0 +1,30 @@
+###
+ # @author Alex Carrega <contact@alexcarrega.com>
+ # @license http://www.apache.org/licenses/LICENSE-2.0 Apache License, Version 2.0
+ ##
+
+columns:
+  image:
+    label: axc.datamanagement::lang.link.list.image.label
+    type: partial
+    path: @/plugins/axc/datamanagement/models/link/_image_column.htm
+    cssClass: p-5px
+  link:
+    label: axc.datamanagement::lang.link.list.link
+    type: partial
+    path: @/plugins/axc/datamanagement/models/link/_info_column.htm
+    searchable: yes
+    cssClass: w-25pc
+  description:
+    label: axc.datamanagement::lang.link.list.description
+    searchable: yes
+  timestamp:
+    label: axc.datamanagement::lang.link.list.timestamp
+    type: partial
+    path: @/plugins/axc/datamanagement/models/link/_timestamp_column.htm
+    cssClass: w-25pc
+  published:
+    label: axc.datamanagement::lang.link.list.published
+    type: partial
+    path: @/plugins/axc/datamanagement/models/link/_published_column.htm
+    cssClass: w-7pc

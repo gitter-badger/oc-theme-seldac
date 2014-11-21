@@ -1,0 +1,18 @@
+{
+	"name": "october/seldac",
+	"type": "october-theme",
+	"description": "Seldac Servizi theme",
+	"keywords": ["october", "cms", "seldac", "theme"],
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Alex Carrega",
+			"email": "contact@alexcarrega.com",
+			"role": "founder"
+		}
+	],
+	"require": {
+		"php": ">=5.4",
+		"segmentio/analytics-php": "1.0.3"
+	}
+}
