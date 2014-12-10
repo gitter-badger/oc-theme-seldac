@@ -1,4 +1,4 @@
 Seldac
 ======
 
-Seldac Servizi S.r.L.
+Seldac Servizi S.r.L. Theme for OctoberCMS
