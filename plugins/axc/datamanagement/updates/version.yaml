@@ -1,5 +1,0 @@
-1.0.9.7.7:
-  - First version of Links
-  - Add Link Model
-  - create_link_table.php
-  - seed_link_table.php

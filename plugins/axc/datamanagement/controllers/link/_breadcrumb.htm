@@ -1,8 +1,0 @@
-<? Block::put('breadcrumb') ?>
-	<ul>
-		<? if ( $this->pageTitle != Lang::get('axc.datamanagement::lang.link.breadcrumb.title') ): ?>
-			<li><a href="<?= Backend::url('axc/datamanagement/link') ?>"><?= Lang::get('axc.datamanagement::lang.link.breadcrumb.title') ?></a></li>
-		<? endif ?>
-		<li><?= $this->pageTitle ?></li>
-	</ul>
-<? Block::endPut() ?>

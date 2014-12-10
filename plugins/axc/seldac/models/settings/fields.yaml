@@ -1,8 +1,0 @@
-fields:
-  name:
-    span: left
-    label: Name Site
-
-  fullname:
-    span: right
-    label: Fullname Site
