@@ -1,4 +1,3 @@
-Seldac
-======
+# oc-theme-seldac
 
-Seldac Servizi S.r.L. Theme for OctoberCMS
+> Seldac Servizi S.r.L. (http://www.seldacservizi.it) Theme for OctoberCMS.
