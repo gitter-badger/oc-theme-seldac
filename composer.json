@@ -3,7 +3,7 @@
 	"description": "Seldac Servizi S.r.L. (http://www.seldacservizi.it) Theme for OctoberCMS",
 	"type": "october-theme",
 	"keywords": ["october", "cms", "theme", "axc", "seldac"],
-	"homepage": "https://www.alexcarrega.com/p/oc-theme-seldac",
+	"homepage": "http://www.alexcarrega.com/p/oc-theme-seldac",
 	"license": "Apache-2.0",
 	"authors": [
 		{
@@ -17,7 +17,7 @@
 		"email": "support-oc-theme-seldac@alexcarrega.com",
 		"issues": "https://github.com/alexcarrega/oc-theme-seldac/issues",
 		"wiki": "https://github.com/alexcarrega/oc-theme-seldac/wiki",
-		"forum": "@todo",
+		"forum": "http://www.alexcarrega.com/p/oc-theme-seldac",
 		"source": "https://github.com/alexcarrega/oc-theme-seldac/wiki"
 	},
 	"require": {
