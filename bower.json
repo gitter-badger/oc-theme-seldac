@@ -1,5 +1,5 @@
 {
-	"name": "axc/oc-theme-seldac",
+	"name": "alexcarrega/oc-theme-seldac",
 	"dependencies":
 	{
 		"axc-class2.css": ">=0.0.1",
